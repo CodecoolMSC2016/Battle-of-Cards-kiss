@@ -1,5 +1,5 @@
 package cardgame;
 
-public class Game {
+public class Round {
 
 }
