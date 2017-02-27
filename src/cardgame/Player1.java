@@ -12,14 +12,13 @@ public class Player1 implements Player {
 		for (int i = 0; i < 16; i++) {
 			Random random = new Random();
 			int n = random.nextInt(32) + 1;
-			System.out.println(n);
-			for (Cars cars : Cars.values()) {
-				if (n == Cars.values()[cars].id) {
-					handOfPlayer1.add(Cars.values()[n]);
+			for (Cars car : Cars.values()) {
+				if (n == car.id) {
+					handOfPlayer1.add(car);
 				}
 			}
-			System.out.println(handOfPlayer1);
 		}
+		// System.out.println(handOfPlayer1.toString());
 		return handOfPlayer1;
 	}
 }
