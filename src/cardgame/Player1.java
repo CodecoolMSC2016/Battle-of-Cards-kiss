@@ -18,7 +18,7 @@ public class Player1 implements Player {
 				}
 			}
 		}
-		// System.out.println(handOfPlayer1.toString());
+		System.out.println(handOfPlayer1.toString());
 		return handOfPlayer1;
 	}
 }
