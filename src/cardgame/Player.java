@@ -1,13 +1,25 @@
 package cardgame;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player {
 
-	ArrayList<Cars> handOfPlayer1 = new ArrayList<Cars>();
-	ArrayList<Cars> handOfPlayer2 = new ArrayList<Cars>();
+	List<Cars> handOfPlayer = new ArrayList<Cars>();
 
-	public void getCard() {
+	public Player(List<Cars> handOfPlayer) {
+		this.handOfPlayer = handOfPlayer;
+	}
+	
+	public Player() {
+	}
+	
+	public void addCard(Cars car) {
+		handOfPlayer.add(car);
+	}
+	// Enum<?> e
 
+	public List<Cars> getHandOfPlayer() {
+		return handOfPlayer;
 	}
 }
