@@ -1,13 +1,22 @@
 package cardgame;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
+
+
 public class Round extends Dealer {
+	CardComparator comp;
+	
 	public Round(Player player1, Player player2)
 	{
 		super(player1, player2);
+		comp = new CardComparator();
+		
 	}
+	
+	
 	private int counterPlayer1 = 0;
 	private int counterPlayer2 = 0;
 	
@@ -33,13 +42,16 @@ public class Round extends Dealer {
 	{
 		Dealer dealer = new Dealer(player1, player2);
 		dealer.deal(); 
+		int tempComp;
 		for(int i = 0; i < player2.getHandOfPlayer().size(); i++)
 		{	
-			if (player1.getHandOfPlayer().get(i).tSpeed == player2.getHandOfPlayer().get(i).tSpeed)
+			tempComp = comp.compare(player1.getHandOfPlayer().get(i), player2.getHandOfPlayer().get(i));
+			
+			if (tempComp == 0)
 			{
 				continue;
 			}
-			if (player1.getHandOfPlayer().get(i).tSpeed > player2.getHandOfPlayer().get(i).tSpeed)
+			if (tempComp > 0)
 			{
 				setCounterPlayer1(1);
 			}
@@ -50,4 +62,8 @@ public class Round extends Dealer {
 			
 		}
 	}	
+	private void compare()
+	{
+		
+	}
 }
