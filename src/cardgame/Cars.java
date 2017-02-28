@@ -1,5 +1,4 @@
 package cardgame;
-
 public enum Cars {
 	DaimlerSix(1, 230),
 	FordGranada(2, 172),

@@ -15,7 +15,6 @@ public class Round extends Dealer {
 	{
 		return counterPlayer1;
 	}
-
 	public void setCounterPlayer1(int number)
 	{
 		this.counterPlayer1 += number;
