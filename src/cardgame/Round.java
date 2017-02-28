@@ -1,11 +1,5 @@
 package cardgame;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
-
-
 public class Round extends Dealer {
 	CardComparator comp;
 	
@@ -15,7 +9,6 @@ public class Round extends Dealer {
 		comp = new CardComparator();
 		
 	}
-	
 	
 	private int counterPlayer1 = 0;
 	private int counterPlayer2 = 0;
@@ -47,23 +40,25 @@ public class Round extends Dealer {
 		{	
 			tempComp = comp.compare(player1.getHandOfPlayer().get(i), player2.getHandOfPlayer().get(i));
 			
+			System.out.println((i+1) + ".round:");
+			System.out.println("Player1 card: " + player1.getHandOfPlayer().get(i) + "\nPlayer2 card: " +  player2.getHandOfPlayer().get(i));
+			
 			if (tempComp == 0)
 			{
+				System.out.println("Same parameter \n");
 				continue;
 			}
 			if (tempComp > 0)
 			{
 				setCounterPlayer1(1);
+				System.out.println("Round won by Player1 \n");
 			}
 			else
 			{
 				setCounterPlayer2(1);
+				System.out.println("Round won by Player2 \n");
 			}
 			
 		}
 	}	
-	private void compare()
-	{
-		
-	}
 }
