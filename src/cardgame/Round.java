@@ -8,7 +8,6 @@ public class Round extends Dealer {
 	{
 		super(player1, player2);
 	}
-
 	private int counterPlayer1 = 0;
 	private int counterPlayer2 = 0;
 	

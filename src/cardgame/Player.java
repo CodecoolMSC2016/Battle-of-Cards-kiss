@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-
 	List<Cars> handOfPlayer = new ArrayList<Cars>();
 
 	public Player(List<Cars> handOfPlayer) {

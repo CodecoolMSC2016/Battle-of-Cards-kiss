@@ -13,7 +13,6 @@ public class Dealer {
 		this.player1 = player1;
 		this.player2 = player2;
 	}
-
 	public void deal() {
 		List<Cars> cards = Arrays.asList(Cars.values());
 		Collections.shuffle(cards);
