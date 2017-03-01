@@ -16,7 +16,7 @@ public class CardComparator implements Comparator<Cars> {
 			System.out.println("Please Chose an option from the followings");
 			System.out.println("TopSpeed, Weight, Displacement, Cylinder, Acceleration");
 			String option = scan.nextLine();
-			if (good.)
+			if (good.contains)
 			{
 				
 			}
