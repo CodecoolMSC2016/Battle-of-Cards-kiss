@@ -58,7 +58,7 @@ public enum Cars {
 	}
 
 	public String toString(){
-		return "" + this.name() + ", " + id + ", " + tSpeed;
+		return "" + this.name() + ", " + id + ", " + tSpeed + ", " + weight + ", " + displacement + ", " + cylinder + ", " + acceleration;
 	}
 	
 }
