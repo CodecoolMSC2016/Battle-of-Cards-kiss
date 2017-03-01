@@ -1,15 +1,18 @@
 package cardgame;
 
-public class Round extends Dealer {
+public class Game  {
 	CardComparator comp;
+	Player player1;
+	Player player2;
 
-	public Round(Player player1, Player player2) {
-		super(player1, player2);
+	public Game(Player player1, Player player2) {
+		this.player1 = player1;
+		this.player2 = player2;
 		comp = new CardComparator();
 
 	}
 
-	public void round() {
+	public void playGame() {
 		Dealer dealer = new Dealer(player1, player2);
 		dealer.deal();
 		int tempComp;
@@ -39,6 +42,19 @@ public class Round extends Dealer {
 				}
 			}
 
+		}
+	}
+	
+	public void endGame(Player player1, Player player2) {
+		System.out.format("Player 1 Score: %s %n", player1.getScore());
+		System.out.format("Player 2 Score: %s", player2.getScore());
+
+		if (player1.getScore() > player2.getScore()) {
+			System.out.println("\n\nGame won by Player1!");
+		} else if (player1.getScore() < player2.getScore()) {
+			System.out.println("\n\nGame won by Player2!");
+		} else {
+			System.out.println("\n\nWin-Win!!");
 		}
 	}
 }

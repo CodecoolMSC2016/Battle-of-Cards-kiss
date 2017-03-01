@@ -14,12 +14,12 @@ public class Dealer {
 		this.player2 = player2;
 	}
 	public void deal() {
-		List<Cars> cards = Arrays.asList(Cars.values());
+		List<Car> cards = Arrays.asList(Car.values());
 		Collections.shuffle(cards);
 		
 		boolean toPlayer1 = true;
 		
-		for (Cars car : cards) {
+		for (Car car : cards) {
 			if (toPlayer1) {
 				player1.addCard(car);
 			} else {

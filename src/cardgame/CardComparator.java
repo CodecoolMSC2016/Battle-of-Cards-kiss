@@ -3,10 +3,10 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class CardComparator implements Comparator<Cars> {
+public class CardComparator implements Comparator<Car> {
 
 	@Override
-	public int compare(Cars player1Card, Cars player2Card) {
+	public int compare(Car player1Card, Car player2Card) {
 		String[] good = {"S", "W", "D", "C", "A", "s", "w", "d", "c", "a"};
 		String finalOption = "";
 		while (!Arrays.asList(good).contains(finalOption))

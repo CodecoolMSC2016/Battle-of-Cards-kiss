@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-	List<Cars> handOfPlayer = new ArrayList<Cars>();
+	List<Car> handOfPlayer = new ArrayList<Car>();
 	private int score = 0;
 
 	public int getScore() {
@@ -15,11 +15,11 @@ public class Player {
 		this.score += 1;
 	}
 
-	public void addCard(Cars car) {
+	public void addCard(Car car) {
 		handOfPlayer.add(car);
 	}
 
-	public List<Cars> getHandOfPlayer() {
+	public List<Car> getHandOfPlayer() {
 		return handOfPlayer;
 	}
 

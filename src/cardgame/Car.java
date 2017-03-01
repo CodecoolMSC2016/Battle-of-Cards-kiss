@@ -1,6 +1,6 @@
 package cardgame;
 
-public enum Cars {
+public enum Car {
 	DaimlerSix(1, 230, 1708, 3980, 6, 7.4),
 	FordGranada(2, 172, 1205, 2293, 6, 12.4),
 	LamborghiniCountach(3, 295, 1490, 5167, 12, 4.9),
@@ -41,9 +41,7 @@ public enum Cars {
 	int cylinder;
 	double acceleration;
 
-
-
-	private Cars(int id, int tSpeed, int weight, int displacement, int cylinder, double acceleration)
+	private Car(int id, int tSpeed, int weight, int displacement, int cylinder, double acceleration)
 	{
 		this.id = id;
 		this.tSpeed = tSpeed;
@@ -57,7 +55,7 @@ public enum Cars {
 		return id;
 	}
 
-	public String toString(){
+	public String toString() {
 		return "" + this.name() + ": TopSpeed: " + tSpeed + ", weight: " + weight + ", displacement: " + displacement + ", cylinder: " + cylinder + ", acceleration: " + acceleration;
 	}
 	
