@@ -22,4 +22,8 @@ public class Player {
 	public List<Cars> getHandOfPlayer() {
 		return handOfPlayer;
 	}
+
+	public void showCard(int index) {
+		System.out.println(handOfPlayer.get(index));
+	}
 }

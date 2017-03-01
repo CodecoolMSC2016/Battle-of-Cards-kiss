@@ -8,6 +8,7 @@ public class Round extends Dealer {
 		comp = new CardComparator();
 
 	}
+
 	public void round() {
 		Dealer dealer = new Dealer(player1, player2);
 		dealer.deal();
@@ -27,9 +28,11 @@ public class Round extends Dealer {
 			if (tempComp > 0) {
 				player1.setScore(1);
 				System.out.println("Round won by Player1 \n");
+				player1.showCard(i + 1);
 			} else {
 				player2.setScore(1);
 				System.out.println("Round won by Player2 \n");
+				player2.showCard(i + 1);
 			}
 
 		}
