@@ -34,12 +34,12 @@ public enum Car {
 	Tatra613(31, 190, 1600, 3495, 8, 12.7),
 	AlfaRomeoGTV6(32, 230, 1227, 2492, 6, 8.8);
 
-	int id;
-	int tSpeed;
-	int weight;
-	int displacement;
-	int cylinder;
-	double acceleration;
+	public int id;
+	public int tSpeed;
+	public int weight;
+	public int displacement;
+	public int cylinder;
+	public double acceleration;
 
 	private Car(int id, int tSpeed, int weight, int displacement, int cylinder, double acceleration)
 	{
