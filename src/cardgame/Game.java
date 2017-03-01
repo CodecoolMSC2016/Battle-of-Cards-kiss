@@ -16,7 +16,7 @@ public class Game  {
 	Player player1;
 	Player player2;
 	Comparator<Car> comparator;
-	Map<String, Comparator<Car>> mComparators = new HashMap<>();
+	Map<String, Comparator<Car>> comparatorMap = new HashMap<>();
 
 	public Game(Player player1, Player player2) {
 		this.player1 = player1;
@@ -36,11 +36,11 @@ public class Game  {
 	}
 	
 	public void createComparatorMap() {
-		mComparators.put("s", new SpeedComparator());
-		mComparators.put("w", new WeightComparator());
-		mComparators.put("d", new DisplacementComparator());
-		mComparators.put("c", new CylinderComparator());
-		mComparators.put("a", new AccelerationComparator());
+		comparatorMap.put("s", new SpeedComparator());
+		comparatorMap.put("w", new WeightComparator());
+		comparatorMap.put("d", new DisplacementComparator());
+		comparatorMap.put("c", new CylinderComparator());
+		comparatorMap.put("a", new AccelerationComparator());
 	}
 	
 	public void selectPlayer() {
@@ -71,18 +71,13 @@ public class Game  {
 		
 		while (!Arrays.asList(good).contains(input)) {
 			Scanner scan = new Scanner(System.in);
-			System.out.println("Please Chose an option from the followings:");
-			System.out.println(
-							  "S = TopSpeed,"
-							+ "W = Weight,"
-							+ "D = Displacement,"
-							+ "C = Cylinder,"
-							+ "A = Acceleration");
+			System.out.println("Please Choose an option from the followings:");
+			System.out.println("[S] = TopSpeed, [W] = Weight, [D] = Displacement, [C] = Cylinder, [A] = Acceleration");
 			String option = scan.nextLine();
 			input = option.toLowerCase();
 		}
 		
-		comparator = mComparators.get(input);
+		comparator = comparatorMap.get(input);
 	}
 	
 	public void compareCards() {
