@@ -11,8 +11,8 @@ public class Player {
 		return score;
 	}
 
-	public void setScore(int score) {
-		this.score += score;
+	public void adScore() {
+		this.score += 1;
 	}
 
 	public void addCard(Cars car) {
