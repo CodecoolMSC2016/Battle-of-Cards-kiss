@@ -11,7 +11,7 @@ public class Player {
 		return score;
 	}
 
-	public void adScore() {
+	public void addScore() {
 		this.score += 1;
 	}
 

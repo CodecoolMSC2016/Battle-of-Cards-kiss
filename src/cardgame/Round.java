@@ -26,13 +26,13 @@ public class Round extends Dealer {
 				continue;
 			}
 			if (tempComp > 0) {
-				player1.adScore();;
+				player1.addScore();
 				System.out.println("Round won by Player1 \n");
 				if (i < 15) {
 					player1.showCard(i + 1);
 				}
 			} else {
-				player2.adScore();;
+				player2.addScore();
 				System.out.println("Round won by Player2 \n");
 				if (i < 15) {
 					player2.showCard(i + 1);
