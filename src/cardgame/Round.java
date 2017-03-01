@@ -8,12 +8,12 @@ public class Round extends Dealer {
 		comp = new CardComparator();
 
 	}
-
 	public void round() {
 		Dealer dealer = new Dealer(player1, player2);
 		dealer.deal();
 		int tempComp;
 		for (int i = 0; i < player2.getHandOfPlayer().size(); i++) {
+			System.out.println();
 			tempComp = comp.compare(player1.getHandOfPlayer().get(i), player2.getHandOfPlayer().get(i));
 
 			System.out.println((i + 1) + ".round:");
