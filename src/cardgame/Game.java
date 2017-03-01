@@ -24,16 +24,15 @@ public class Game  {
 	}
 
 	public void playGame() {
-		Dealer dealer = new Dealer(player1, player2);
-		dealer.deal();
-		
-		createComparatorMap();
-		
 		System.out.println("QUARTETT GAME: \n");
 		
-		selectPlayer();		
-		readInput();
+		Dealer dealer = new Dealer(player1, player2);
+		
+		dealer.deal();
+		selectPlayer();
+		createComparatorMap();
 		compareCards();
+		endGame();
 	}
 	
 	public void createComparatorMap() {
@@ -52,7 +51,7 @@ public class Game  {
 		System.out.println("Which player would like to start the game? [1/2]");
 		input = scan.nextInt();
 		
-		while(validInput == false)
+		while(!validInput)
 		if(input == 1) {
 			System.out.println("Player1 card: " + player1.getHandOfPlayer().get(0));
 			validInput = true;
@@ -64,7 +63,6 @@ public class Game  {
 			System.out.println("Which player would like to start the game? [1/2]");
 			input = scan.nextInt();
 		}
-		
 	}
 	
 	public void readInput() {
@@ -90,13 +88,14 @@ public class Game  {
 	public void compareCards() {
 		int tempComp;
 		
+		readInput();
+		
 		for (int i = 0; i < player2.getHandOfPlayer().size(); i++) {
-			System.out.println();
 			tempComp = comparator.compare(player1.getHandOfPlayer().get(i), player2.getHandOfPlayer().get(i));
 
-			System.out.println((i + 1) + ".round:");
-			System.out.println("Player1 card: " + player1.getHandOfPlayer().get(i) + "\nPlayer2 card: "
-					+ player2.getHandOfPlayer().get(i));
+			System.out.println("\n" + (i + 1) + ".round:");
+			System.out.println("Player1 card: " + player1.getHandOfPlayer().get(i) + 
+					"\nPlayer2 card: "+ player2.getHandOfPlayer().get(i));
 
 			if (tempComp == 0) {
 				System.out.println("Same parameter \n");
@@ -115,11 +114,13 @@ public class Game  {
 					player2.showCard(i + 1);
 				}
 			}
-			readInput();
+			if (i < 15) {
+				readInput();
+			}
 		}
 	}
 	
-	public void endGame(Player player1, Player player2) {
+	public void endGame() {
 		System.out.format("Player 1 Score: %s %n", player1.getScore());
 		System.out.format("Player 2 Score: %s", player2.getScore());
 
